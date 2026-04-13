@@ -163,15 +163,18 @@ const NoConfigPage = () => {
 			}}>
 				<ExampleLink href='?url=https://mcp.example.com/mcp' code='?url=https://mcp.example.com/mcp' description='Remote HTTP server' />
 				<ExampleLink href='?url=https://mcp.example.com/sse&transport=sse' code='?url=https://...&transport=sse' description='Remote SSE server' />
+				<ExampleLink href='?config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItZmlsZXN5c3RlbSIsIi9wYXRoL3RvL2RpciJdLCJuYW1lIjoiZmlsZXN5c3RlbSJ9' code='?config=eyJjb21tYW5kIjoibnB4Ii4uLg' description='Stdio server (base64 JSON)' />
+				<ExampleLink href='?config=eyJuYW1lIjoiYnJhdmUtc2VhcmNoIiwicGFja2FnZXMiOlt7InJlZ2lzdHJ5VHlwZSI6Im5wbSIsImlkZW50aWZpZXIiOiJAYW50aHJvcGljL21jcC1zZXJ2ZXItYnJhdmUiLCJydW50aW1lSGludCI6Im5weCIsInRyYW5zcG9ydCI6eyJ0eXBlIjoic3RkaW8ifSwiZW52aXJvbm1lbnRWYXJpYWJsZXMiOlt7Im5hbWUiOiJCUkFWRV9BUElfS0VZIiwiZGVzY3JpcHRpb24iOiJZb3VyIEJyYXZlIEFQSSBrZXkifV19XX0' code='?config=eyJuYW1lIjoiYnJhdmUuLi4' description='MCP registry server.json (base64 JSON)' />
 			</div>
 
 			<div style={{...sectionLabel, marginBottom: 10}}>URL format</div>
 			<div style={{
 				fontSize: 12, color: 'var(--subtle)', marginBottom: 32, lineHeight: 1.8,
 			}}>
-				<code style={{color: 'var(--fg)'}}>?url=</code> &mdash; server URL (required)<br />
+				<code style={{color: 'var(--fg)'}}>?url=</code> &mdash; server URL (required for remote servers)<br />
 				<code style={{color: 'var(--fg)'}}>?transport=</code> &mdash; <code>http</code> (default) or <code>sse</code><br />
-				<code style={{color: 'var(--fg)'}}>?name=</code> &mdash; server name (auto-derived if omitted)
+				<code style={{color: 'var(--fg)'}}>?name=</code> &mdash; server name (auto-derived if omitted)<br />
+				<code style={{color: 'var(--fg)'}}>?config=</code> &mdash; base64-encoded JSON for stdio or <a href='https://github.com/modelcontextprotocol/registry' style={{color: 'var(--fg)'}}>server.json</a> configs
 			</div>
 
 			{footerEl}

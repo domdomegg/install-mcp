@@ -2,7 +2,7 @@
 
 Shows install instructions for MCP servers across different clients. Pass a server URL via query params and pick your client from a dropdown.
 
-https://github.com/user-attachments/assets/d6d5eb60-b07d-4934-97da-7bfce87b54a5
+<img width="700" alt="Screenshot" src="https://github.com/user-attachments/assets/d6d5eb60-b07d-4934-97da-7bfce87b54a5" />
 
 ## Contributing
 

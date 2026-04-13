@@ -173,7 +173,6 @@ const NoConfigPage = () => {
 			}}>
 				<code style={{color: 'var(--fg)'}}>?url=</code> &mdash; server URL (required for remote servers)<br />
 				<code style={{color: 'var(--fg)'}}>?transport=</code> &mdash; <code>http</code> (default) or <code>sse</code><br />
-				<code style={{color: 'var(--fg)'}}>?name=</code> &mdash; server name (auto-derived if omitted)<br />
 				<code style={{color: 'var(--fg)'}}>?config=</code> &mdash; base64-encoded JSON for stdio or <a href='https://github.com/modelcontextprotocol/registry' style={{color: 'var(--fg)'}}>server.json</a> configs
 			</div>
 

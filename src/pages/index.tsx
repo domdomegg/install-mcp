@@ -1,26 +1,9 @@
 import {useRouter} from 'next/router';
 import {useEffect, useMemo, useState} from 'react';
 import Markdown from 'react-markdown';
-import {generateInstallInstructions, type ClientId, type ServerInput} from 'mcp-install-instructions';
-
-const allClients: ClientId[] = [
-	'chatgpt',
-	'claude-ai',
-	'claude-code',
-	'cline',
-	'codex',
-	'crush',
-	'cursor',
-	'gemini-cli',
-	'goose',
-	'hermes',
-	'librechat',
-	'opencode',
-	'openclaw',
-	'roo-code',
-	'vscode',
-	'windsurf',
-];
+import {
+	generateInstallInstructions, clientIds, type ClientId, type ServerInput,
+} from 'mcp-install-instructions';
 
 function parseConfig(query: Record<string, string | string[] | undefined>): ServerInput | null {
 	if (typeof query.url === 'string') {
@@ -53,7 +36,7 @@ function usePersistedClient(): [ClientId, (c: ClientId) => void] {
 
 	useEffect(() => {
 		const saved = localStorage.getItem('mcp-install-client');
-		if (saved && allClients.includes(saved as ClientId)) {
+		if (saved && clientIds.includes(saved as ClientId)) {
 			setClient(saved as ClientId);
 		}
 	}, []);
@@ -242,7 +225,7 @@ const Home = () => {
 					e.currentTarget.style.borderColor = 'var(--input-border)';
 				}}
 			>
-				{allClients.map((id) => {
+				{clientIds.map((id) => {
 					const r = generateInstallInstructions(id, server);
 					return (
 						<option key={id} value={id} disabled={r.methods.length === 0}>
